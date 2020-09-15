@@ -1,0 +1,2314 @@
+/*----------------------------------------
+[Master Stylesheet]
+
+Project:	SmartMine
+Version:	2.0
+Primary use:	SmartMine Template
+----------------------------------------*/
+
+/*----------------------------------------
+[Table of contents]
+
+1. Common styles
+2. Header
+3. Home
+4. Default button
+5. Paginator
+6. Section
+7. Service
+8. Price
+9. Currenc
+10. Steps
+11. Popular
+12. Knowledge
+13. Testimonial
+14. Calculate
+15. Servers
+16. Feature
+17. FAQ
+18. Team
+19. Post
+20. Article
+21. Sidebar
+22.	Get started
+23. Review
+24. Form
+25. Sign
+26. Partners
+27. Footer
+----------------------------------------*/
+
+$white = #fff
+$black = #000
+$grey = #757575
+
+$red = #ff6866
+$green = #1ea664
+$yellow = #e4bd35
+
+//  schema
+$title-clr = #444444
+$text-clr = #707070
+$clr1 = #78B0EF
+
+/*==============================
+	Fonts
+==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap')
+
+/*==============================
+	Common styles
+==============================*/
+html
+	-webkit-text-size-adjust 100%
+	-ms-text-size-adjust 100%
+html
+body
+	height 100%
+body
+	font-family 'Roboto', sans-serif
+	font-weight 400
+	background-color $white
+	-webkit-font-smoothing antialiased
+button
+	padding 0
+	border none
+	background-color transparent
+	border-radius 0
+	&:focus
+		outline none
+a
+	transition .3s ease
+	&:hover
+	&:active
+	&:focus
+		outline none
+		text-decoration none
+input
+textarea
+select
+	padding 0
+	margin 0
+	border-radius 0
+	-webkit-appearance none
+	-moz-appearance none
+	appearance none
+	box-shadow none
+	&:focus
+		outline none
+ul
+	margin 0
+	padding 0
+	list-style none
+::-moz-selection
+	background $title-clr
+	color $white
+	text-shadow none
+::selection
+	background $title-clr
+	color $white
+	text-shadow none
+
+::-webkit-input-placeholder
+	color $clr1
+	opacity 1
+::-moz-placeholder
+	color $clr1
+	opacity 1
+:-moz-placeholder
+	color $clr1
+	opacity 1
+:-ms-input-placeholder
+	color $clr1
+	opacity 1
+
+/* owl carousel dots customized */
+.owl-dots
+	position relative
+	width 100%
+	text-align center
+	-webkit-tap-highlight-color transparent
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center
+	margin-top 40px
+	.owl-dot
+		display block
+		position relative
+		margin 0 8px
+		width 14px
+		height 14px
+		span
+			display block
+			position absolute
+			width 6px
+			height 6px
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+			-webkit-backface-visibility visible
+			transition .4s
+			background-color rgba($title-clr, .65)
+			border-radius 50%
+		&.active
+			span
+				width 10px
+				height 10px
+				background-color $title-clr
+
+.owl-carousel .owl-item img
+	width auto
+	max-width 100%
+
+/* custom close btn for modal */
+.mfp-image-holder .mfp-close
+.mfp-iframe-holder .mfp-close
+	color transparent
+	font-size 0
+	right 0
+	opacity 1
+	width 30px
+	height 40px
+	padding-right 0
+	&:after
+		content '\e646'
+		font-family 'themify'
+		color $title-clr
+		display block
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		font-size 20px
+		transition .3s ease-in-out
+	&:hover
+		&:after
+			color $text-clr
+
+/* custom bg for modal */
+.mfp-bg
+	background transparent
+	background-color rgba($clr1, .65)
+	opacity 1
+
+.mfp-fade.mfp-bg 
+	opacity 0
+	transition .4s ease
+
+.mfp-fade.mfp-bg.mfp-ready
+	opacity .75
+
+.mfp-fade.mfp-bg.mfp-removing
+	opacity 0
+
+.mfp-fade.mfp-wrap .mfp-content
+	opacity 0
+	transition .4s ease
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+	opacity 1
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+	opacity 0
+
+.mfp-iframe-scaler
+	iframe
+		border-radius 6px
+		overflow hidden
+		box-shadow 0 16px 56px 0 rgba($black, .1)
+
+/* container */
+.container
+	@media (min-width: 1300px)
+		max-width 1250px
+
+/*==============================
+	Header
+==============================*/
+.header
+	position fixed
+	top 0
+	left 0
+	right 0
+	height 60px
+	padding 0 15px
+	display flex
+	flex-direction row
+	justify-content space-between
+	align-items center
+	background-color transparent
+	z-index 9
+	transition .3s ease
+	transition-property background-color, box-shadow
+	&__menu
+		height 40px
+		width 40px
+		position absolute
+		right 15px
+		display block
+		cursor pointer
+		z-index 9
+		i
+			position absolute
+			top 0
+			left 0
+			height 40px
+			width 40px
+			font-size 24px
+			line-height 40px
+			transition .3s
+			color $title-clr
+			&.ti-close
+				opacity 1
+				font-size 0
+		&--active
+			i.ti-close
+				opacity 1
+				font-size 20px
+				color $white
+			i.ti-menu
+				font-size 0
+				opacity 0
+	&__nav
+		position fixed
+		width 280px
+		right 0
+		top 0
+		bottom 0
+		background-color $title-clr
+		padding 60px 30px 0
+		display flex
+		flex-direction column
+		justify-content flex-start
+		align-items flex-start
+		border-bottom 1px solid rgba($white, .1)
+		transform translate3d(280px, 0, 0)
+		transition .3s ease-in-out
+		z-index 8
+		li
+			margin-bottom 15px
+			&:last-child
+				margin-bottom 0
+		a
+			color $white
+			font-size 16px
+			letter-spacing .6px
+			i
+				color $white
+				transition .3s ease
+		&--active
+			transform translate3d(0, 0, 0)
+	&__dropdown
+		position relative
+		display block
+		width 100%
+		.dropdown-toggle
+			display flex
+			flex-direction row
+			justify-content flex-start
+			align-items center
+			i
+				font-size 8px
+				margin-top 3px
+				margin-left 4px
+	&__dropdown-menu
+		position absolute
+		background-color $white
+		padding 20px 25px
+		display block
+		width 100%
+		text-align left
+		z-index -1
+		pointer-events none
+		opacity 0
+		border-radius 6px
+		box-shadow 0 16px 56px 0 rgba($black, .1)
+		transition .3s ease
+		margin-top 0
+		top 0
+		li
+			padding 0
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+		a
+			font-size 16px
+			color $title-clr
+		&.show
+			z-index 1000
+			pointer-events auto
+			opacity 1
+			margin-top 15px
+	&--white
+		background-color $white
+	&--active
+		background-color $white
+		box-shadow 0 6px 26px 0 rgba($black, .1)
+	@media (min-width: 576px)
+		&__nav
+			padding 90px 30px 0
+	@media (min-width: 768px)
+		padding 0 25px
+		height 80px
+		&__nav
+			padding 110px 30px 0
+		&__menu
+			right 25px
+	@media (min-width: 1200px)
+		padding 0 35px
+		height 90px
+		&__menu
+			display none
+		&__nav
+			transform translate3d(0, 0, 0)
+			width auto
+			right auto
+			bottom auto
+			top auto
+			height auto
+			flex-direction row
+			background-color transparent
+			padding 0
+			position relative
+			text-align center
+			white-space nowrap
+			border none
+			justify-content center
+			align-items center
+			li
+				margin 0 20px
+				padding 0
+			a
+				color $text-clr
+				i
+					color $text-clr
+				&:hover
+					color $title-clr
+					i
+						color $title-clr
+		&__dropdown
+			display inline-block
+			width auto
+			&.show
+				.dropdown-toggle
+					color $title-clr
+		&__dropdown-menu
+			min-width 160px
+			width auto
+			li
+				margin 0 0 10px
+				&:last-child
+					margin-bottom 0
+		&--active
+		&--white
+			background-color $white
+			.btn
+				background-color $clr1
+				color $white
+				&:hover
+					color $white
+	@media (min-width: 1600px)
+		padding 0 50px
+
+/*==============================
+	Home
+==============================*/
+.home
+	position relative
+	overflow hidden
+	height 100vh
+	&__content
+		display flex
+		height 100vh
+		flex-direction column
+		justify-content center
+		align-items stretch
+		&--desk
+			display none
+	&__title
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		line-height 130%
+		font-weight 500
+		font-size 34px
+		margin-bottom 10px
+	&__text
+		font-size 16px
+		line-height 170%
+		color $text-clr
+		letter-spacing .6px
+		margin-bottom 30px
+	&__btn
+		position absolute
+		display block
+		bottom 20px
+		height 30px
+		width 20px
+		left 50%
+		transform translateX(-50%)
+		color $title-clr
+		font-size 18px
+		i
+			position absolute
+			display block
+			left 0
+			-webkit-animation arrow 1.6s infinite ease
+			animation arrow 1.6s infinite ease
+		&:hover
+			color $text-clr
+	&__particles
+		position absolute
+		display block
+		top 0
+		right 0
+		bottom 0
+		left 0
+		z-index -2
+	&__feature
+		display block
+		padding 30px
+		background-color $white
+		margin 15px 0
+		position relative
+		border-radius 6px
+		box-shadow 0 16px 56px 0 rgba($black, .1)
+		i
+			font-size 42px
+			color $title-clr
+			position relative
+			&:before
+				z-index 2
+				position relative
+			&:after
+				content ''
+				position absolute
+				display block
+				width 44px
+				height 44px
+				background-color $clr1
+				opacity .9
+				left -8px
+				bottom -8px
+				border-radius 50%
+				z-index 1
+		h3
+			font-size 16px
+			font-weight 500
+			font-family 'Montserrat', sans-serif
+			color $title-clr
+			margin-top 20px
+			margin-bottom 0
+	@media (min-width: 576px)
+		&__title
+			font-size 36px
+	@media (min-width: 768px)
+		&__title
+			font-size 42px
+		&__text
+			font-size 17px
+			margin-bottom 40px
+	@media (min-width: 1200px)
+		&:before
+		&:after
+			content ''
+			position absolute
+			display none
+			top 0
+			left 0
+			width 100%
+			height 100vh
+		&:before
+			background url('../img/home/home-bg.jpg') no-repeat right center / cover
+			z-index -2
+		&:after
+			background-color $clr1
+			z-index -1
+			opacity .65
+		&--circle
+			&:before
+			&:after
+				width 130vh
+				height 130vh
+				right -65vh
+				top -30vh
+				left auto
+				border-radius 50%
+				display block
+		&--ellipse
+			&:before
+			&:after
+				width 115vh
+				height 90vh
+				right -23vh
+				top 0
+				left auto
+				border-radius 45vh 0 0 45vh
+				transform rotate(-45deg)
+				display block
+			&:before
+				background url('../img/home/home-bg2.jpg') no-repeat center center / cover
+		&--rectangle
+			&:before
+			&:after
+				width 105vh
+				height 90vh
+				top -7vh
+				right -27vh
+				left auto
+				transform rotate(-45deg)
+				display block
+				border-radius 20%
+			&:before
+				background url('../img/home/home-bg2.jpg') no-repeat center center / cover
+		&__content
+			padding-top 45px
+		&__title
+			font-size 50px
+		&__content
+			&--desk
+				display flex
+	@media (min-width: 1600px)
+		&--ellipse
+			&:before
+			&:after
+				right -30vh
+		&__content
+			padding-top 60px
+	@media (min-width: 1900px)
+		&--circle
+			&:before
+			&:after
+				width 140vh
+				height 140vh
+				right -70vh
+				top -40vh
+		&--ellipse
+			&:before
+			&:after
+				right -25vh
+
+@keyframes arrow
+	0% 
+		bottom 0
+	75%
+		bottom 10px
+	100% 
+		bottom 0
+
+/*==============================
+	Default button
+==============================*/
+.btn
+	position relative
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center
+	height 56px
+	width 100%
+	max-width 180px
+	font-size 13px
+	text-transform uppercase
+	background-color $clr1
+	font-weight 700
+	color $white
+	border-radius 30px
+	letter-spacing 1px
+	overflow hidden
+	cursor pointer
+	transition .3s ease
+	&:hover
+		color $white
+		background-color $title-clr
+	&--white
+		background-color $white
+		color $clr1
+		&:hover
+			color $clr1
+	&--border
+		border 2px solid $clr1
+		background-color $white
+		color $clr1
+		line-height 53px
+		&:hover
+			background-color $clr1
+			color $white
+	&--transparent
+		background-color rgba($white, .4)
+	&--header
+		height 44px
+		width 110px
+		margin-right 45px
+	&--shadow
+		box-shadow 0 6px 9px 0 rgba($clr1, .6)
+		&:hover
+			box-shadow 0 6px 9px 0 rgba($title-clr, .5)
+	&--center
+		margin 0 auto
+	&--top50
+		margin-top 25px
+	&--top25
+		margin-top 25px
+	@media (min-width: 768px)
+		&--header
+			height 48px
+			width 130px
+			margin-right 55px
+		&--top50
+			margin-top 35px
+	@media (min-width: 1200px)
+		&--header
+			margin-right 0
+			background-color $white
+			color $clr1
+
+/*==============================
+	Paginator
+==============================*/
+.paginator
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center
+	&__item
+		margin 0 12px
+		a
+			font-size 18px
+			height 26px
+			line-height 26px
+			color $grey
+		&:hover
+			a
+				color $clr1
+		&--prev
+		&--next
+			a
+				font-size 16px
+			i
+				line-height 26px
+				height 26px
+				display block
+		&--prev
+			margin 0 15px 0 0
+		&--next
+			margin 0 0 0 15px
+		&--active
+			a
+				color $title-clr
+				font-weight 500
+				cursor default
+			&:hover
+				a
+					color $title-clr
+
+/*==============================
+	Section
+==============================*/
+.section
+	position relative
+	padding 50px 0
+	&__title
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		line-height 130%
+		font-weight 500
+		font-size 30px
+		margin-bottom 10px
+		text-align center
+		position relative
+		z-index 2
+		&--white
+			color $white
+		&--margin
+			margin-bottom 25px
+		&--head
+			margin 0
+	&__text
+		font-size 16px
+		line-height 24px
+		color $text-clr
+		margin-bottom 25px
+		text-align center
+		position relative
+		z-index 2
+		b
+			font-weight 500
+		&--white
+			color $white
+		&--head
+			margin 0
+	&__video
+		display block
+		margin 0 auto 25px
+		position relative
+		z-index 2
+		width 44px
+		height 44px
+		i
+			position relative
+			line-height 44px
+			font-size 44px
+			color $white
+			&:before
+				z-index 2
+				position relative
+			&:after
+				content ''
+				position absolute
+				display block
+				width 44px
+				height 44px
+				background-color $clr1
+				opacity .9
+				left -8px
+				bottom -8px
+				border-radius 50%
+				z-index 1
+	&__app
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		position relative
+		z-index 2
+		a
+			margin-top 25px
+		img
+			width 190px
+	&--bg
+		&:before
+			content ''
+			position absolute
+			display block
+			top 0
+			left 0
+			right 0
+			bottom 0
+			background-color rgba($title-clr, .7)
+			z-index 1
+	&--border-top
+		border-top 1px solid rgba($title-clr, .1)
+	&--border-bottom
+		border-bottom 1px solid rgba($title-clr, .1)
+	&--first
+		margin-top 60px
+	@media (min-width: 576px)
+		padding 55px 0
+		&__title
+			font-size 32px
+		&__app
+			flex-direction row
+			a
+				margin 25px 15px 0
+	@media (min-width: 768px)
+		padding 60px 0
+		&__title
+			font-size 36px
+		&__text
+			font-size 17px
+			line-height 26px
+		&--first
+			margin-top 80px
+	@media (min-width: 992px)
+		padding 70px 0
+	@media (min-width: 1200px)
+		padding 80px 0
+		&__title
+			font-size 38px
+		&__app
+			a
+				margin 30px 15px 0
+		&--first
+			margin-top 90px
+
+/*==============================
+	Service
+==============================*/
+.service
+	display block
+	padding 20px
+	background-color $white
+	margin 15px 0
+	position relative
+	border-radius 6px
+	transition .3s ease
+	border-bottom 7px solid transparent
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	border-color $clr1
+	i
+		font-size 42px
+		color $title-clr
+		position relative
+		&:before
+			z-index 2
+			position relative
+		&:after
+			content ''
+			position absolute
+			display block
+			width 44px
+			height 44px
+			background-color $clr1
+			opacity .9
+			left -8px
+			bottom -8px
+			border-radius 50%
+			z-index 1
+	&__title
+		font-size 18px
+		font-weight 500
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		margin-top 25px
+	&__text
+		font-size 16px
+		line-height 24px
+		margin 0
+		color $text-clr
+		b
+			font-weight 500
+		a
+			color $clr1
+			font-weight 500
+			&:hover
+				text-decoration underline
+	@media (min-width: 360px)
+		padding 30px
+
+/*==============================
+	Price
+==============================*/
+.price
+	display block
+	background-color $white
+	margin 15px auto 30px
+	position relative
+	border-radius 6px
+	transition .3s ease
+	text-align center
+	overflow hidden
+	padding 30px 0
+	width 100%
+	max-width 330px
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	&__title
+		display block
+		font-size 24px
+		font-weight 600
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		margin 0
+	&__list
+		display block
+		padding 30px 0
+		margin 0
+		li
+			font-size 16px
+			line-height 24px
+			color $text-clr
+			margin-bottom 5px
+			b
+				font-weight 500
+			&:last-child
+				margin-bottom 0
+	&__value
+		font-family 'Montserrat', sans-serif
+		font-size 42px
+		color $white
+		font-weight 500
+		display block
+		background-color $clr1
+		height 74px
+		line-height 74px
+		margin-bottom 20px
+	&__text
+		display block
+		font-size 16px
+		line-height 24px
+		color $text-clr
+		margin-bottom 20px
+	&:last-child
+		margin-bottom 0
+	&--best
+		&:before
+			content ''
+			position absolute
+			display block
+			width 110px
+			height 110px
+			top -55px
+			left -55px
+			transform rotate(45deg)
+			background-color $clr1
+		&:after
+			content '\e60a'
+			position absolute
+			display block
+			font-family 'themify'
+			top 0
+			left 0
+			width 44px
+			height 44px
+			line-height 44px
+			color $white
+			text-align center
+			font-size 24px
+	@media (min-width: 768px)
+		display block
+		width 50%
+		max-width none
+		margin 0
+		border-radius 0
+		&:first-child
+			margin-top 15px
+			border-radius 6px 0 0 0
+			z-index 4
+		&:nth-child(2)
+			margin-top 15px
+			border-radius 0 6px 0 0
+			z-index 3
+		&:nth-child(3)
+			margin-bottom 15px
+			border-radius 0 0 0 6px
+			z-index 2
+		&:last-child
+			margin-bottom 15px
+			border-radius 0 0 6px 0
+			z-index 1
+	@media (min-width: 1200px)
+		width 25%
+		margin 15px 0
+		&:first-child
+			border-radius 6px 0 0 6px
+		&:last-child
+			border-radius 0 6px 6px 0
+		&:nth-child(2)
+		&:nth-child(3)
+			border-radius 0
+
+.price-wrap
+	@media (min-width: 768px)
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items flex-start
+		flex-wrap wrap
+
+/*==============================
+	Currenc
+==============================*/
+.currenc
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	margin 15px 0
+	&__icon
+		font-size 42px
+	&__name
+		font-size 16px
+		line-height 24px
+		color $title-clr
+		font-weight 500
+		text-align center
+	&__hash
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		color $text-clr
+
+/*==============================
+	Steps
+==============================*/
+.step
+	display block
+	margin 15px 0
+	padding 0 10px
+	i
+		font-size 42px
+		color $title-clr
+		position relative
+		&:before
+			z-index 2
+			position relative
+		&:after
+			content ''
+			position absolute
+			display block
+			width 44px
+			height 44px
+			background-color $clr1
+			opacity .9
+			left -8px
+			bottom -8px
+			border-radius 50%
+			z-index 1
+			color $white
+			font-family 'Montserrat', sans-serif
+			font-weight 500
+			line-height 44px
+			text-align center
+			font-size 20px
+	&__title
+		font-size 18px
+		font-weight 500
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		margin-top 25px
+	&__text
+		font-size 16px
+		line-height 24px
+		margin 0
+		color $text-clr
+		b
+			font-weight 500
+		a
+			color $clr1
+			font-weight 500
+			&:hover
+				text-decoration underline
+	@media (min-width: 768px)
+		padding 0
+	@media (min-width: 992px)
+		margin 25px 0
+
+/*==============================
+	Popular
+==============================*/
+.popular
+	display flex
+	flex-direction column
+	justify-content center
+	align-items flex-start
+	background-color $white
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	border-radius 6px
+	padding 25px
+	text-align center
+	margin 15px 0
+	&__name
+		font-size 18px
+		color $title-clr
+		font-weight 500
+		position relative
+		padding-left 30px
+		margin-bottom 10px
+		&:before
+			content ''
+			position absolute
+			font-size 8px
+			top 50%
+			left 0
+			margin-top -10px
+			display block
+			font-family 'themify'
+			width 20px
+			height 20px
+			line-height 20px
+			border-radius 50%
+			color $white
+		&--up
+			&:before
+				content '\e627'
+				background-color $green
+		&--down
+			&:before
+				content '\e62a'
+				background-color $red
+	&__price
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		color $title-clr
+	&__cap
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		color $text-clr
+
+/*==============================
+	Knowledge
+==============================*/
+.knowledge
+	padding 20px
+	background-color $white
+	margin 15px 0
+	position relative
+	border-radius 6px
+	transition .3s ease
+	border-bottom 7px solid transparent
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	border-color $clr1
+	&__title
+		font-size 18px
+		font-weight 500
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		margin-top 0
+		margin-bottom 15px
+	&__list
+		li
+			font-size 16px
+			font-weight 400
+			display flex
+			flex-direction row
+			justify-content space-between
+			align-items center
+			margin-bottom 6px
+			&:last-child
+				margin-bottom 0
+		span
+			color $text-clr
+			font-size 14px
+		a
+			color $title-clr
+			&:hover
+				color $clr1
+	@media (min-width: 360px)
+		padding 30px
+
+/*==============================
+	Testimonial
+==============================*/
+.testimonial-slider
+	@media (min-width: 576px)
+		.owl-item.active
+			.testimonial__text
+				box-shadow 0 26px 46px 0 rgba($black, .1)
+
+.testimonial
+	display block
+	margin 15px auto
+	width 100%
+	max-width 330px
+	&__text
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		height 250px
+		background-color $title-clr
+		box-shadow 0 0 0 0 rgba($black, .1)
+		border-radius 6px
+		padding 20px 35px
+		transition .3s ease
+		p
+			font-size 16px
+			color $white
+			line-height 24px
+			&:last-child
+				margin-bottom 0
+	&__client
+		margin-top 30px
+		margin-left 35px
+		position relative
+		padding-left 57px
+		img
+			width 42px
+			height 42px
+			position absolute
+			top 0
+			left 0
+			box-shadow 0 2px 6px 0 rgba($black, .1)
+			border-radius 50%
+		p
+			font-family 'Montserrat', sans-serif
+			margin 0
+			font-size 16px
+			color $title-clr
+			font-weight 500
+			line-height 21px
+			display block
+		span
+			font-size 14px
+			color $grey
+			line-height 21px
+			display block
+	@media (min-width: 576px)
+		&__text
+			background-color $white
+			p
+				color $title-clr
+
+/*==============================
+	Calculate
+==============================*/
+.calculate
+	display block
+	background-color $white
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	border-radius 6px
+	padding 25px
+	text-align center
+	margin 15px 0
+	&__text
+		display block
+		color $text-clr
+		font-size 16px
+		line-height 24px
+		margin 20px 0
+		text-align center
+	&__info
+		font-size 14px
+		font-weight 500
+		color $text-clr
+		display inline-block
+		position relative
+		line-height 20px
+		a
+			display inline-flex
+			flex-direction row
+			justify-content center
+			align-items center
+			width 20px
+			height 20px
+			background-color $clr1
+			color $white
+			text-align center
+			font-size 12px
+			border-radius 50%
+			top 0
+			margin-left 5px
+	@media (min-width: 576px)
+		padding 35px 30px
+
+/*==============================
+	Servers
+==============================*/
+.servers
+	border-radius 6px
+	background-color $white
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	width 100%
+	max-width 480px
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center
+	flex-wrap wrap
+	padding 25px
+	margin 0 auto
+	&__title
+		flex 0 0 100%
+		font-size 16px
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		font-weight 500
+		margin-bottom 10px
+	&__item
+		flex 0 0 50%
+		font-size 15px
+		position relative
+		padding-left 18px
+		line-height 30px
+		color $title-clr
+		&:before
+			content ''
+			position absolute
+			display block
+			border-radius 50%
+			top 50%
+			left 0
+			transform translateY(-50%)
+			width 9px
+			height 9px
+		&--red
+			&:before
+				background-color $red
+		&--green
+			&:before
+				background-color $green
+		&--yellow
+			&:before
+				background-color $yellow
+
+/*==============================
+	Feature
+==============================*/
+.feature
+	display block
+	padding 0 10px 0 75px
+	background-color $white
+	margin 15px 0
+	position relative
+	border-radius 6px
+	transition .3s ease
+	i
+		font-size 42px
+		color $title-clr
+		position absolute
+		top 0
+		left 15px
+		&:before
+			z-index 2
+			position relative
+		&:after
+			content ''
+			position absolute
+			display block
+			width 44px
+			height 44px
+			background-color $clr1
+			opacity .9
+			left -8px
+			bottom -8px
+			border-radius 50%
+			z-index 1
+	&__title
+		font-size 18px
+		font-weight 500
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		margin-bottom 8px
+	&__text
+		font-size 16px
+		line-height 24px
+		margin 0
+		color $text-clr
+		b
+			font-weight 500
+		a
+			color $clr1
+			font-weight 500
+			&:hover
+				text-decoration underline
+	@media (min-width: 768px)
+		margin 25px 0
+		padding 0 0 0 75px
+	@media (min-width: 1200px)
+		padding 0 0 0 80px
+
+/*==============================
+	FAQ
+==============================*/
+.faq
+	display block
+	margin-bottom 50px
+	&__title
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		font-weight 500
+		font-size 24px
+		margin-bottom 10px
+	&__text
+		font-size 16px
+		line-height 24px
+		font-weight 400
+		margin-bottom 20px
+		color $text-clr
+		&:last-child
+			margin-bottom 0
+	@media (min-width: 768px)
+		margin-bottom 55px
+		&:last-child
+			margin-bottom 0
+		&__text
+			line-height 26px
+	@media (min-width: 992px)
+		padding 0 10px
+	@media (min-width: 1200px)
+		margin-bottom 60px
+	@media (min-width: 1600px)
+		margin-bottom 70px
+
+/*==============================
+	Team
+==============================*/
+.team
+	display block
+	margin 15px 0
+	position relative
+	border-radius 6px
+	transition .3s ease
+	text-align center
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	overflow hidden
+	&:after
+		content ''
+		position absolute
+		display block
+		top 0
+		right 0
+		left 0
+		bottom 0
+		z-index 2
+		background -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%)
+		background -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%)
+		background -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%)
+		background -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%)
+		background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%)
+	&__img
+		display block
+		position relative
+		z-index 1
+		background-color rgba($title-clr, .1)
+		img
+			width 100%
+	&__title
+		font-size 18px
+		font-weight 500
+		font-family 'Montserrat', sans-serif
+		color $white
+		margin-top 15px
+		margin-bottom 5px
+		letter-spacing .2px
+		display block
+		position absolute
+		left 20px
+		bottom 20px
+		z-index 3
+		transition .3s ease
+	&__position
+		font-size 16px
+		color $text-clr
+		line-height 24px
+		letter-spacing .2px
+		margin-bottom 15px
+		display block
+		position absolute
+		left 20px
+		bottom 40px
+		color $white
+		z-index 3
+		transition .3s ease
+	&__social
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		position absolute
+		width 100%
+		height 50px
+		bottom -50px
+		transition .3s ease
+		background-color $clr1
+		z-index 3
+		li
+			margin 0 10px
+		a
+			display block
+			line-height 26px
+			font-size 17px
+			color $white
+			&:hover
+				color $title-clr
+	&:hover
+		.team__social
+			bottom 0
+		.team__title
+			bottom 70px
+		.team__position
+			bottom 90px
+
+/*==============================
+	Post
+==============================*/
+.post
+	display block
+	margin-bottom 40px
+	border-radius 6px
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	overflow hidden
+	&__img
+		position relative
+		height 180px
+		width 100%
+		overflow hidden
+		display block
+		margin 0
+		img
+			position absolute
+			width auto
+			max-width 100%
+			top -99px
+			left -99px
+			right -99px
+			bottom -99px
+			margin auto
+	&__header
+		margin 20px 0 15px
+		padding 0 20px
+	&__date
+		font-weight 500
+		color $grey
+		font-size 12px
+		text-transform uppercase
+		margin-bottom 10px
+		display block
+	&__title
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		font-weight 500
+		margin 0
+		display block
+		font-size 24px
+		line-height 32px
+	&__content
+		padding 0 20px 25px
+		p
+			font-size 16px
+			line-height 24px
+			color $text-clr
+			margin-bottom 25px
+	&__link
+		position relative
+		display inline-block
+		height 48px
+		width 140px
+		font-size 13px
+		text-transform uppercase
+		line-height 48px
+		background-color $clr1
+		text-align center
+		font-weight 700
+		color $white
+		border-radius 48px
+		letter-spacing 1px
+		cursor pointer
+		&:hover
+			color $white
+			background-color $title-clr
+	@media (min-width: 768px)
+		&__img
+			height 240px
+		&__header
+			padding 0 25px
+		&__content
+			padding 0 25px 25px
+		&__title
+			font-size 26px
+			line-height 34px
+	@media (min-width: 992px)
+		margin-bottom 50px
+		&__img
+			height 260px
+
+/*==============================
+	Article
+==============================*/
+.article
+	&__content
+		img
+			width 100%
+			margin-bottom 20px
+			border-radius 6px
+		h1
+		h2
+		h3
+		h4
+		h5
+		h6
+			font-family 'Montserrat', sans-serif
+			color $title-clr
+			line-height 130%
+			font-weight 500
+			margin-bottom 15px
+		h1
+			font-size 30px
+		h2
+			font-size 26px
+		h3
+			font-size 22px
+		h4
+			font-size 20px
+		h5
+			font-size 18px
+		h6
+			font-size 16px
+		p
+			display block
+			font-size 16px
+			line-height 24px
+			font-weight 400
+			color $text-clr
+			margin-bottom 20px
+			b
+				font-weight 500
+			a
+				color $clr1
+				text-decoration underline
+				&:hover
+				&:focus
+					color $clr1
+					text-decoration none
+		blockquote
+			display block
+			position relative
+			font-family 'Montserrat', sans-serif
+			padding 0 0 0 20px
+			font-size 16px
+			line-height 26px
+			color $title-clr
+			font-weight 400
+			margin-bottom 20px
+			&:before
+				content ''
+				position absolute
+				display block
+				left 0
+				top 4px
+				bottom 5px
+				width 3px
+				background-color rgba($clr1, .8)
+		ul
+			margin-bottom 20px
+			padding-left 20px
+			display block
+			list-style circle
+			li
+				font-size 16px
+				line-height 26px
+				font-weight 400
+				color $text-clr
+				padding-left 5px
+		ol
+			padding-left 0
+			list-style none
+			counter-reset li
+			margin-bottom 20px
+			ol
+				padding-left 15px
+				margin-bottom 0
+				margin-top 20px
+				li
+					margin-top 0
+				ol
+					margin-top 20px
+					margin-bottom 0
+			li
+				font-size 16px
+				line-height 26px
+				color $text-clr
+				position relative
+				margin-top 20px
+				b
+					font-weight 600
+					color $text-clr
+				a
+					color $clr1
+					&:hover
+						color $clr1
+						text-decoration underline
+				&:last-child
+					margin-bottom 0
+				&:before
+					counter-increment li
+					content counters(li,".") ". "
+	&__social
+		border-bottom 1px solid rgba($title-clr, .1)
+		margin-top 40px
+		padding-bottom 25px
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+	&__social-btn
+		width 120px
+		text-align center
+		height 40px
+		line-height 40px
+		color $white
+		margin-right 25px
+		border-radius 40px
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		span
+			font-size 14px
+			font-weight 500
+			font-family 'Montserrat', sans-serif
+		i
+			font-size 14px
+			margin-right 10px
+		&--fb
+			background-color #3c5a9a
+		&--tw
+			background-color #00adf2
+		&:hover
+			color $white
+			background-color $title-clr
+		&:last-child
+			margin-right 0
+	&__nav
+		display flex
+		flex-direction row
+		justify-content center
+		align-items center
+		margin-top 25px
+		position relative
+		&:before
+			content ''
+			position absolute
+			display block
+			width 1px
+			height auto
+			top 0
+			bottom 0
+			background-color rgba($title-clr, .1)
+			left 50%
+		a
+			width 50%
+			min-height 140px
+			display flex
+			flex-direction column
+			justify-content center
+			span
+				font-size 14px
+				color $text-clr
+				margin-bottom 5px
+			h6
+				font-size 16px
+				color $title-clr
+				font-family 'Montserrat', sans-serif
+				font-weight 500
+				margin 0
+				transition .3s ease
+			&:first-child
+				align-items flex-end
+				padding-right 25px
+				text-align right
+			&:last-child
+				align-items flex-start
+				padding-left 25px
+				text-align left
+			&:hover
+				h6
+					color $clr1
+	@media (min-width: 768px)
+		&__content
+			h1
+			h2
+			h3
+			h4
+			h5
+			h6
+				margin-bottom 20px
+			h1
+				font-size 36px
+			h2
+				font-size 32px
+			h3
+				font-size 28px
+			h4
+				font-size 26px
+			h5
+				font-size 24px
+			h6
+				font-size 22px
+			p
+				font-size 17px
+				line-height 26px
+				margin-bottom 25px
+			ul
+				margin-bottom 25px
+				li
+					font-size 17px
+					line-height 26px
+			ol
+				margin-bottom 25px
+				ol
+					margin-top 25px
+					ol
+						margin-top 25px
+			blockquote
+				line-height 26px
+				margin-bottom 25px
+			img
+				margin-bottom 25px
+		&__social
+			margin-top 50px
+			padding-bottom 30px
+		&__nav
+			margin-top 30px
+			a
+				min-height 160px
+				span
+					font-size 16px
+					margin-bottom 7px
+				h6
+					font-size 18px
+				&:first-child
+					padding-right 50px
+				&:last-child
+					padding-left 50px
+	@media (min-width: 1200px)
+		&__nav
+			a
+				min-height 180px
+				h6
+					font-size 20px
+				span
+					margin-bottom 10px
+				&:first-child
+					padding-right 50px
+				&:last-child
+					padding-left 50px
+
+/*==============================
+	Sidebar
+==============================*/
+.sidebar
+	display block
+	position relative
+	border-radius 6px
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	padding 25px
+	margin-bottom 40px
+	z-index 1
+	&__title
+		font-family 'Montserrat', sans-serif
+		color $title-clr
+		font-weight 500
+		font-size 18px
+		margin-bottom 10px
+		display block
+	&__list
+		display block
+		li
+			margin-bottom 6px
+			position relative
+			padding-left 14px
+			&:before
+				content '-'
+				position absolute
+				left 0
+				top 0
+				display block
+				font-size 16px
+				letter-spacing .2px
+				color $text-clr
+			&:last-child
+				margin-bottom 0
+		a
+			font-size 16px
+			line-height 24px
+			color $text-clr
+			&:hover
+				color $clr1
+	&__search
+		position relative
+		input
+			padding 0 65px 0 20px
+			margin 0
+		button
+			position absolute
+			display block
+			top 5px
+			right 5px
+			width 46px
+			height 46px
+			line-height 48px
+			border-radius 50%
+			background-color $white
+			color $clr1
+			font-size 18px
+			cursor pointer
+			z-index 1
+			transition .3s ease
+			&:hover
+				color $white
+				background-color $clr1
+
+/*==============================
+	Get started
+==============================*/
+.get-started
+	display flex
+	flex-direction column
+	justify-content center
+	align-items flex-start
+	border 2px solid $clr1
+	border-radius 6px
+	padding 30px
+	&__title
+		color $title-clr
+		font-family 'Montserrat', sans-serif
+		font-weight 500
+		font-size 28px
+		margin-bottom 15px
+		line-height 100%
+	&__text
+		color $title-clr
+		font-size 16px
+		line-height 26px
+		margin-bottom 30px
+	@media (min-width: 576px)
+		padding 40px
+	@media (min-width: 768px)
+		padding 40px 100px 40px 50px
+		&__title
+			font-size 30px
+	@media (min-width: 1200px)
+		padding 50px 100px 50px 50px
+		&__title
+			font-size 32px
+
+/*==============================
+	Review
+==============================*/
+.review
+	margin-bottom 40px
+	&__blockquote
+		font-size 18px
+		font-family 'Montserrat', sans-serif
+		color $text-clr
+		margin 0
+	&__autor
+		display block
+		padding 10px 0
+		text-align right
+		color $title-clr
+		font-size 16px
+		font-style italic
+		span
+			display block
+			font-size 14px
+			color $text-clr
+	@media (min-width: 992px)
+		margin 0
+		padding 50px 25px 0 0
+	@media (min-width: 1200px)
+		padding 60px 50px 0 0
+
+/*==============================
+	Form
+==============================*/
+.form
+	margin 15px auto
+	display flex
+	flex-direction column
+	justify-content flex-start
+	align-items center
+	background-color $white
+	box-shadow 0 16px 56px 0 rgba($black, .1)
+	border-radius 6px
+	padding 25px
+	max-width 450px
+	&__input
+	&__select
+	&__textarea
+		display block
+		width 100%
+		border-radius 30px
+		height 56px
+		border none
+		background-color rgba($clr1, .25)
+		color $title-clr
+		padding 0 20px
+		margin-bottom 20px
+		font-size 16px
+		font-weight 400
+	&__textarea
+		resize none
+		height 140px
+		padding 15px 20px
+	&__select-wrap
+		display block
+		position relative
+		&:before
+			content '\e64b'
+			position absolute
+			display block
+			font-family 'themify'
+			top 25px
+			right 20px
+			color $clr1
+			pointer-events none
+			font-size 12px
+			height 8px
+			line-height 8px
+	&__select
+		cursor pointer
+		color $clr1
+	&__group
+		position relative
+		margin-top 30px
+		input
+			&:not(:checked)
+			&:checked
+				position absolute
+				left -9999px
+			&:not(:checked) + label
+			&:checked + label
+				font-size 16px
+				color $text-clr
+				position relative
+				cursor pointer
+				padding-left 34px
+				line-height 22px
+				margin 0
+				a
+					color $text-clr
+					text-decoration underline
+					&:hover
+						color $clr1
+						text-decoration underline
+			&:not(:checked) + label:before
+			&:checked + label:before
+				content ''
+				position absolute
+				left 0
+				top 0
+				width 22px
+				height 22px
+				background-color $white
+				border-radius 6px
+				background-color rgba($clr1, .25)
+			&:not(:checked) + label:after
+			&:checked + label:after
+				font-family 'themify'
+				content '\e64c'
+				position absolute
+				left 0
+				top 0
+				width 22px
+				height 22px
+				font-size 12px
+				line-height 22px
+				text-align center
+				transition .3s
+				color $clr1
+			&:not(:checked) + label:after
+				opacity 0
+				transform scale(0)
+			&:checked + label:after
+				opacity 1
+				transform scale(1)
+	&--contacts
+		border-bottom 7px solid $clr1
+	@media (min-width: 576px)
+		padding 40px
+		&__group
+			margin-top 40px
+
+/*==============================
+	Sign
+==============================*/
+.sign
+	display flex
+	flex-direction row
+	justify-content center
+	align-items center
+	width 100%
+	height auto
+	min-height 100vh
+	position relative
+	&__content
+		border-radius 6px
+		background-color $white
+		box-shadow 0 16px 56px 0 rgba($black, .1)
+		border-bottom 7px solid $clr1
+		width 100%
+		max-width 290px
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		margin 20px 0
+		position relative
+		z-index 2
+	&__form
+		width 100%
+		padding 30px 20px
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		.btn
+			max-width 100%
+	&__error
+		padding 30px 20px
+		display flex
+		flex-direction column
+		justify-content center
+		align-items center
+		width 100%
+		h1
+			font-family 'Montserrat', sans-serif
+			color $title-clr
+			font-size 100px
+			font-weight 500
+			margin-bottom 0
+		p
+			font-size 16px
+			line-height 24px
+			color $text-clr
+			margin-bottom 30px
+			width 100%
+			text-align center
+	&__logo
+		margin-bottom 30px
+	&__forgot
+		color $grey
+		font-size 16px
+		margin-top 30px
+		text-decoration underline
+		&:hover
+			color $clr1
+			text-decoration underline
+	&__box
+		width 100%
+		text-align center
+		padding 20px 0
+		border-top 1px solid rgba($black, .08)
+		p
+			font-size 16px
+			line-height 24px
+			margin 0
+			color $text-clr
+		a
+			color $text-clr
+			text-decoration underline
+			&:hover
+				color $clr1
+				text-decoration underline
+	&__particles
+		position absolute
+		display block
+		top 0
+		right 0
+		bottom 10px
+		left 0
+		z-index 1
+	@media (min-width: 360px)
+		&__content
+			max-width 330px
+	@media (min-width: 576px)
+		&__content
+			max-width 400px
+		&__form
+			padding 40px
+		&__error
+			padding 40px
+		&__forgot
+			margin-top 40px
+		&__logo
+			margin-bottom 40px
+
+/*==============================
+	Partners
+==============================*/
+.partners
+	display block
+	position relative
+	padding 45px 0
+	background-color $white
+	&__slider
+		img
+			max-width 100%
+			opacity .7
+			-webkit-filter grayscale(1)
+			filter grayscale(1)
+			transition .3s ease-in-out
+		a
+			&:hover
+				img
+					-webkit-filter grayscale(0)
+					filter grayscale(0)
+					opacity 1
+	@media (min-width: 768px)
+		padding 50px 0
+
+/*==============================
+	Footer
+==============================*/
+.footer
+	background-color $white
+	display block
+	position relative
+	overflow hidden
+	padding 50px 0 30px
+	&__logo
+		margin-bottom 40px
+	&__title
+		color $title-clr
+		font-size 16px
+		font-weight 500
+		font-family 'Montserrat', sans-serif
+		margin-bottom 20px
+	&__list
+		margin-bottom 40px
+		li
+			margin-bottom 10px
+			&:last-child
+				margin-bottom 0
+		a
+			font-size 16px
+			color $grey
+			&:hover
+				color $clr1
+	&__social
+		display flex
+		flex-direction row
+		justify-content flex-start
+		align-items center
+		li
+			margin-right 20px
+			&:last-child
+				margin-left 0
+		a
+			font-size 17px
+			color $grey
+			&:hover
+				color $clr1
+	&__copyright
+		display flex
+		flex-direction column
+		justify-content center
+		align-items flex-start
+		margin-top 50px
+		border-top 1px solid rgba($title-clr, .1)
+		padding-top 40px
+		small
+			color $grey
+			font-size 14px
+			a
+				color $grey
+				&:hover
+					color $clr1
+		ul
+			display flex
+			flex-direction row
+			justify-content center
+			align-items flex-start
+			margin-top 20px
+			li
+				margin-right 25px
+				&:last-child
+					margin-right 0
+			a
+				color $grey
+				font-size 14px
+				&:hover
+					color $clr1
+	@media (min-width: 576px)
+		padding 55px 0 40px
+		&__title
+			margin-top 0
+		&__list
+			margin-bottom 40px
+		&__copyright
+			margin-top 10px
+	@media (min-width: 768px)
+		padding 60px 0 40px
+		&__copyright
+			margin-top 60px
+			flex-direction row
+			justify-content space-between
+			align-items center
+			ul
+				margin-top 0
+				li
+					margin-right 30px
+	@media (min-width: 992px)
+		padding 70px 0 40px
+		&__copyright
+			margin-top 30px
+	@media (min-width: 1200px)
+		padding 80px 0 40px
+		&__copyright
+			margin-top 40px
